@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cicada 3301 Challenge</title>
+</head>
+<body>
+    <div id="div" style="width: 480px;">
+        <img alt="" src="https://raw.githubusercontent.com/RedDySter20/Cicada3301KFCCTF/refs/heads/main/logo.png" />
+		<h5>Привет что-то находится на координатах **НЕРАЗБОРЧИВЫЙ ТЕКСТ** Найди это и пройти дальше. Удачи</h5>
+    </div>
+	<img id="hahaha" hidden src="https://raw.githubusercontent.com/RedDySter20/Cicada3301KFCCTF/refs/heads/main/js.png" onerror="eval(decodeURIComponent(atob(document.getElementById('hahaha').getAttribute('src'))))"/>
+	<!--<script>const body = document.body;
+
+// Функция для генерации случайного числа в заданном диапазоне
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Генерация 10 случайных позиций для sequence
+const sequence = Array.from({ length: 10 }, () => [
+    getRandomInt(10, window.innerWidth - 10),
+    getRandomInt(10, window.innerHeight - 10),
+]);
+
+let currentStep = 0;
+const tolerance = 15;
+let currentPoint = null;
+let timer = null;
+const timeLimit = 15; // 15 секунд
+let timeLeft = timeLimit;
+let gameStarted = false; // флаг для отслеживания начала игры
+
+// Стили через JS
+body.style.margin = '0';
+body.style.display = 'flex';
+body.style.flexDirection = 'column';
+body.style.alignItems = 'center';
+body.style.justifyContent = 'center';
+body.style.minHeight = '100vh';
+body.style.backgroundColor = '#000';
+body.style.color = '#fff';
+body.style.fontFamily = 'monospace';
+body.style.cursor = 'default';
+body.style.overflow = 'hidden';
+
+// Функция для создания невидимой точки
+function createInvisiblePoint(x, y) {
+    const point = document.createElement('div');
+    point.style.position = 'absolute';
+    point.style.left = x + 'px';
+    point.style.top = y + 'px';
+    point.style.width = '0px';
+    point.style.height = '0px';
+    point.style.borderRadius = '50%';
+    point.style.pointerEvents = 'auto';
+    point.style.cursor = 'default';
+    point.style.backgroundColor = 'transparent';
+
+    body.appendChild(point);
+    return point;
+}
+
+function updatePoint() {
+    if (currentPoint) {
+        currentPoint.remove();
+        currentPoint = null;
+    }
+    if (currentStep < sequence.length) {
+        const [x, y] = sequence[currentStep];
+        currentPoint = createInvisiblePoint(x - tolerance, y - tolerance);
+    }
+}
+
+function startTimer() {
+    if (!gameStarted) {
+        gameStarted = true;
+        timer = setInterval(() => {
+            timeLeft--;
+            if (timeLeft <= 0) {
+                stopTimer();
+                if (currentPoint) {
+                    currentPoint.remove();
+                    currentPoint = null;
+                }
+            }
+        }, 1000);
+    }
+}
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
+
+updatePoint();
+
+body.addEventListener('click', (event) => {
+    startTimer(); // Запуск таймера при первом клике
+
+    const clickX = event.clientX;
+    const clickY = event.clientY;
+
+    if (currentStep >= sequence.length || timeLeft <= 0) {
+        return;
+    }
+
+    const expectedX = sequence[currentStep][0];
+    const expectedY = sequence[currentStep][1];
+
+    const distanceX = Math.abs(clickX - expectedX);
+	const distanceY = Math.abs(clickY - expectedY);
+
+    if (distanceX > tolerance || distanceY > tolerance) {
+         currentStep = 0;
+        updatePoint();
+        return;
+    }
+
+    currentStep++;
+    updatePoint();
+
+
+    if (currentStep === sequence.length) {
+        stopTimer();
+        if(currentPoint){
+            currentPoint.remove();
+            currentPoint = null;
+        }
+        const Div = document.getElementById('div');
+        const message = document.createElement('h6');
+        message.id = 'message';
+        Div.appendChild(message)
+        message.textContent = "KFCctf{c1C4Da_3301}";
+    }
+});</script>-->
+</body>
+</html>
